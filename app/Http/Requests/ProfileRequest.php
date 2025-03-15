@@ -41,7 +41,7 @@ class ProfileRequest extends FormRequest
         throw new HttpResponseException(
             response()->json([
                 'success' => $validator->errors(),
-                'message' => $validator->errors(),
+                'message' => $validator->getMessageBag(),
                 'data' => false,
             ], 400)
         );
